@@ -83,6 +83,8 @@ class LWRPClient():
 
         self.waitingForCallback = True
         data2 = self.waitForCallback()
+        
+        print(type(data1))
 
         data1[0]['attributes'].update(data2[0]['attributes'])
         return data1

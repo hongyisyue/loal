@@ -5,7 +5,7 @@ from LWRPClient import LWRPClient
 
 
 pixels = neopixel.NeoPixel(board.D18, 256)
-for x in range(0,256):
+for x in range(0,32):
     pos = x % 3
     if pos == 0:
         pixels[x] = (30, 0, 0)
@@ -17,7 +17,7 @@ for x in range(0,256):
         
     pixels[x] = (0, 0, 0)
     
-LWRP = LWRPClient("172.16.0.101", 93)
+LWRP = LWRPClient("172.16.0.23", 93)
 LWRP.login()
 
 print (LWRP.deviceData())

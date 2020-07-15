@@ -56,7 +56,9 @@ class LWRPClientComms(threading.Thread):
                 dataToSend = self.sendQueue[0]
 
                 while dataToSend:
-                    sent = self.sock.send(dataToSend)
+                    #clientSocket.sendto(dataToSend.encode(), (self.hose, self.port))
+                    print(dataToSend.encode())
+                    sent = self.sock.send(dataToSend.encode())
                     dataToSend = dataToSend[sent:]
 
                 # Once the message has been sent, take it out of the queue
